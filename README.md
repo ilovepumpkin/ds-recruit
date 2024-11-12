@@ -37,6 +37,18 @@ Hello future teammate!
 注意：请不要在这个代码仓库里直接提交PR！
 
 
+对容器环境的改动如下
+----
+Dockerfile更改：
+- 因为alpine默认没有make命令, 添加 `RUN apk add --no-cache make`
+- `docker-compose` 已弃用，用`docker compose`替换
+
+单元测试类存在的问题及改善方法
+----
+- 单元测试类只验证了`greeting`方法返回内容，但没有验证在不同的时段应该返回不同的字符串。改善的方法是通过mock DateTime的方式验证不同时段的输出，比如使用Mockery框架、ClockMock库以及PHP Unit中的Mock Builder功能等。
+- 通常单元测试还需要满足一定的覆盖率以保证测试的完备性。可以使用 PHPUnit 测试框架结合 Xdebug 扩展来实现。
+
+
 
 
 

@@ -1,4 +1,5 @@
 <?php
+namespace Src;
 
 use PHPUnit\Framework\TestCase;
 use Src\MyGreeter;
